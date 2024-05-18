@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAMSICKLE - Track 1</title>
+  <style>
+    body {
+      font-family: 'gameboy', monospace;
+      background-color: black;
+      color: #0f0; /* Green color */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-size: 1.2em;
+    }
+
+    @font-face {
+      font-family: 'gameboy';
+      src: url('gameboy.woff2') format('woff2');
+    }
+
+    .title {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    .play-button {
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">HAMSICKLE</h1>
+  <h2>Track 1</h2>
+  <button class="play-button" onclick="playAudio()">▶</button>
+
+  <audio id="player" src="track1.wav" controls preload="none"></audio>
+  
+  <script>
+    const audio = document.getElementById('player');
+
+    function playAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+</html>
